@@ -1,15 +1,42 @@
 
 import tkinter
+import random
+import pygame
+import BlackJack
 
-top = tkinter.Tk()
-CheckVar1 = IntVar()
-CheckVar2 = IntVar()
-C1 = Checkbutton(top, text = "Music", variable = CheckVar1, \
-                 onvalue = 1, offvalue = 0, height=5, \
-                 width = 20)
-C2 = Checkbutton(top, text = "Video", variable = CheckVar2, \
-                 onvalue = 1, offvalue = 0, height=5, \
-                 width = 20)
-C1.pack()
-C2.pack()
-top.mainloop()
+import subprocess as sub
+p = sub.Popen('./BlackJack',stdout=sub.PIPE,stderr=sub.PIPE)
+output, errors = p.communicate()
+
+root = Tk()
+text = Text(root)
+text.pack()
+text.insert(END, output)
+root.mainloop()
+
+# root = tkinter.Tk()
+# root.geometry('480x460')
+# root.title("BlackJack")
+# label_nr_1 = tkinter.Label(root, text="Simple BlackJack Game")
+# label_nr_1.pack()
+
+# pygame.mixer.init()
+
+# new_game = BlackJack.new_game
+
+# start_game_button = tkinter.Button(text="Click to start", command=new_game, fg='green' )
+
+
+# start_game_button.pack()
+# end_game_button = tkinter.Button(text="Click to quit", fg="red")
+# end_game_button.pack()
+
+# def play():
+#     pygame.mixer.music.load("/home/adanm/Desktop/Projects/Black_Jack_Game/audio/0OEX0uFyAX.ogg")
+#     pygame.mixer.music.play()
+
+
+
+# music = tkinter.Button (root, text="check", font="Helvetica", command=play)
+# music.pack()
+
