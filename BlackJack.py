@@ -1,5 +1,6 @@
 import random
-
+from typing import Text
+import tkinter
 def new_game():
 
     players_points = 0 
@@ -51,6 +52,8 @@ def new_game():
                     print("You've won")
                     break
 
+    result = print(f"Your score is {players_points} and dealer's score is {dealers_points}")
+    tkinter.messagebox.showinfo(result)
 
     print(f"Your score is {players_points} and dealer's score is {dealers_points}")
 
